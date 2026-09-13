@@ -1,12 +1,12 @@
-var PORT = process.env.PORT || 3000;
 var express = require('express');
 
 var app = express();
-var server = app.listen(3000);
+var PORT = process.env.PORT || 3000;
+var server = app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
 
 app.use(express.static('public_sketch'));
-
-console.log("Server is running");
 
 var socket = require('socket.io');
 var io = socket(server);
