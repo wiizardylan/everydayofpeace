@@ -4,7 +4,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255);
 
-  socket = io.connect("https://git.heroku.com/everydayofpeace.git");
+  socket = io.connect("https://git.heroku.com/everydayofpeacespace.git");
   socket.on('mouse', newDrawing);
 }
 
