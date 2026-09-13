@@ -3,8 +3,8 @@ var socket;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255);
-  
-  socket = io.connect("http://localhost:3000");
+
+  socket = io.connect("https://git.heroku.com/everydayofpeace.git");
   socket.on('mouse', newDrawing);
 }
 
