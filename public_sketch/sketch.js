@@ -4,7 +4,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255);
 
-  socket = io.connect("https://git.heroku.com/everydayofpeacespace.git");
+  socket = io.connect("https://everydayofpeace.vercel.app/");
   socket.on('mouse', newDrawing);
 }
 
@@ -27,7 +27,11 @@ function mouseDragged() {
     y: mouseY,
   }
 
-  socket.emit('mouse', data);
+  socket.emit('mouse', data => {
+    data.set('Access-Control-Allow-Origin', '*');
+  }
+
+  );
 
   noStroke();
   fill(211,211,211);
