@@ -4,7 +4,7 @@ var express = require('express');
 
 var app = express();
 var PORT = process.env.PORT || 3000;
-var server = app.listen(PORT, () => {
+var server = http.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
